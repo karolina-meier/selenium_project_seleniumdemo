@@ -13,7 +13,7 @@ def test_update_billing_adress():
     driver.implicitly_wait(10)
     driver.maximize_window()
     driver.get("http://seleniumdemo.com/?page_id=7")
-    driver.find_element(By.NAME, "email").send_keys(email)
+    driver.find_element(By.ID, "reg_email").send_keys(email)
     driver.find_element(By.ID, "reg_password").send_keys("Passworld1234!")
     driver.find_element(By.ID, "reg_password").send_keys(Keys.ENTER)
     driver.find_element(By.LINK_TEXT, "Addresses").click()
