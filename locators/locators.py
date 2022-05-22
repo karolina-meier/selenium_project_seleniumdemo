@@ -16,17 +16,17 @@ class BillingAdressLocators:
     city_input = (By.ID, "billing_city")
     phone_input = (By.ID, "billing_phone")
     save_address_btn = (By.NAME, "save_address")
-    message_div = "//div[@class = 'woocommerce-message']"
+    message_div = (By.XPATH, "//div[@class = 'woocommerce-message']")
 
 
-class MyAccountPage:
+class MyAccountPageLocators:
 
     username_input = (By.ID, "username")
     password_input = (By.ID, "password")
     reg_email_input = (By.ID, "reg_email")
     reg_password_input = (By.ID, "reg_password")
     logout_link = (By.LINK_TEXT, "Logout")
-    myaccount_link = (By.XPATH, "//li[@id='menu-item-22']//a")
+    my_account_link = (By.XPATH, "//li[@id='menu-item-22']//a")
     error_msg = (By.XPATH, "//ul[@class='woocommerce-error']//li")
 
 
