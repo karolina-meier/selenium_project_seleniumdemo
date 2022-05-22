@@ -1,12 +1,14 @@
 import random
+import allure
 import pytest
-
 from pages.myaccount_page import MyAccountPage
 
 
 @pytest.mark.usefixtures("setup")
 class TestCreateAccount:
 
+    @allure.title("Test - create account failed")
+    @allure.description("Automation testing using Selenium with page object pattern")
     def test_create_account_failed(self):
         my_account_page = MyAccountPage(self.driver)
         my_account_page.open_page()
@@ -15,6 +17,8 @@ class TestCreateAccount:
         msg = "An account is already registered with your email address. Please log in."
         assert msg in my_account_page.get_error_msg()
 
+    @allure.title("Test - create account passed")
+    @allure.description("Automation testing using Selenium with page object pattern")
     def test_create_account_passed(self):
         email = "anna_nowak" + str(random.randint(0, 10000)) + "@gmail.com"
         my_account_page = MyAccountPage(self.driver)

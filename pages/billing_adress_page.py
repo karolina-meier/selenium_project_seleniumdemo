@@ -41,6 +41,8 @@ class BillingAddressPage:
         self.driver.find_element(*self.city_input).send_keys(city)
 
     def set_phone_number(self, number):
+        self.driver.execute_script("arguments[0].scrollIntoView(true);",
+                                   self.driver.find_element(*self.phone_input))
         self.driver.find_element(*self.phone_input).send_keys(number)
 
     def save_address(self):
